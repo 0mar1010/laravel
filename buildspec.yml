@@ -1,18 +1,12 @@
-version: 0.2
-phases:
-  install:
-    runtime-versions:
-      php: 8.1
-    commands:
-      - apt-get update && apt-get install -y zip unzip
-      - composer install
-  build:
-    commands:
-      - php artisan key:generate --show
-      - npm install && npm run prod
-  post_build:
-    commands:
-      - zip -r application.zip . -x *.git*
-artifacts:
-  files:
-    - application.zip
+ version: 0.2
+ phases:
+   install:
+     commands:
+       - composer install
+   build:
+     commands:
+       - cp .env.example .env
+       - php artisan key:generate
+ artifacts:
+   files:
+     - '**/*'
