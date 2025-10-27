@@ -1,0 +1,23 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+docker-compose*.yml
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Vendor & node_modules
+vendor
+node_modules
+npm-debug.log*
+
+# Laravel runtime
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
